@@ -1,0 +1,78 @@
+*{
+    /* outline: red solid 1px; */
+}
+
+.main-container{
+    position: fixed;
+    top: 0;
+    left: -260px;
+    height: 100%;
+    width : 260px;
+    background-color: white;
+    transition: left 0.6s ease;
+}
+
+.main-container.open{
+    left: 0;
+}
+
+.main-container ul{
+    background-color: white;
+    list-style-type: none;
+    list-style: none;
+    height: 60%;
+    margin-top: 30px;
+}
+
+.main-container ul li{
+    background-color: white;
+    height: 20%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-right: 50px;
+    transition: color 0.15s ease;
+
+}
+
+.main-container ul li a{
+    background-color: white;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 17px;
+    font-weight: 100;
+    text-decoration: none;
+    color : #343a40;
+    transition: all 0.15s ease;
+}
+
+
+.main-container ul li a:hover{
+    color: #0052cc;
+    transition: all 0.15s ease;
+}
+
+.main-container img{
+    width : 60%;
+    margin-left: 20%;
+    margin-top: 20px;
+}
+
+.main-container .toggleButton {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    z-index: 1;
+    transition: left 0.6s ease;
+    color: #343a40;
+    border-style: none;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    background-color: #fafbfd;
+    cursor: pointer;
+  }
+
+  .main-container .toggleButton.open {
+    left: 260px;
+  }

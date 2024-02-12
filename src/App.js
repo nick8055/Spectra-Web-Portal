@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Sidebar from './components/sidebar/sidebar';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Career from './pages/careers/career';
+import Internship from './pages/internships/internship';
+import Hackathon from './pages/hackathons/hackathon';
+import Placement from './pages/placements/placement';
+import Dashboard from './pages/dashboard/dashboard';
+import Navbar from './components/navbar/navbar';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <Navbar/>
+      <Sidebar/>
+        <Routes>
+          <Route path='/dashboard' element={<Dashboard/>}/>
+          <Route path='/careers' element={<Career/>}/>
+          <Route path='/internships' element={<Internship/>}/>
+          <Route path='/hackathons' element={<Hackathon/>}/>
+          <Route path='/placements' element={<Placement/>}/>
+          <Route path="*" element={<Dashboard/>} />
+        </Routes>
+      </BrowserRouter>
+
     </div>
   );
 }
