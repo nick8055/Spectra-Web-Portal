@@ -15,6 +15,36 @@ mongoose.connect('mongodb+srv://nicholasbranson:Karunya8055$@clusterkitsaiml.ryd
   useUnifiedTopology: true,
 });
 
+const internshipSchema = new mongoose.Schema({
+  batch: Number,
+  internship_company_name: String,
+  internship_job_position: String,
+  internship_stipend: String,
+  internship_description: String,
+  internship_mode: String,
+  internship_location: String,
+  internship_duration: String,
+  internship_deadline: Date,
+  internship_application_link: String
+})
+
+const Internship = mongoose.model('Internship',internshipSchema);
+
+app.post('/api/internships',async(req,res) => {
+  try{
+    const {batch,internship_company_name,internship_job_position,internship_stipend,internship_description,internship_mode,internship_location,internship_duration,internship_deadline,internship_application_link} = req.body; 
+
+    const newInternship = new Internship({batch,internship_company_name,internship_job_position,internship_stipend,internship_description,internship_mode,internship_location,internship_duration,internship_deadline,internship_application_link});
+
+    await newInternship.save();
+    res.status(201).send(newInternship);
+  }
+  catch(error){
+    console.error(error);
+    res.status(500).send('Server Error');
+  }
+});
+
 const hackathonSchema = new mongoose.Schema({
   batch: Number,
   event_name: String,
