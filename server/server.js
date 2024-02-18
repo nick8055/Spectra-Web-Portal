@@ -15,6 +15,35 @@ mongoose.connect('mongodb+srv://nicholasbranson:Karunya8055$@clusterkitsaiml.ryd
   useUnifiedTopology: true,
 });
 
+const careerSchema = new mongoose.Schema({
+  batch:Number,
+  company_name:String,
+  job_position:String,
+  salary:String,
+  job_description:String,
+  eligibility:String,
+  location:String,
+  deadline:Date,
+  link:String,
+})
+
+const Career = mongoose.model('Career',careerSchema);
+
+app.post('/api/careers',async(req,res) => {
+  try{
+    const {batch,company_name,job_position,salary,job_description,eligibility,location,deadline,link} = req.body; 
+
+    const newCareer = new Career({batch,company_name,job_position,salary,job_description,eligibility,location,deadline,link});
+
+    await newCareer.save();
+    res.status(201).send(newCareer);
+  }
+  catch(error){
+    console.error(error);
+    res.status(500).send('Server Error');
+  }
+});
+
 const internshipSchema = new mongoose.Schema({
   batch: Number,
   internship_company_name: String,
