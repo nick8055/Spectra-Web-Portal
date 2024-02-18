@@ -4,7 +4,7 @@ import logo from './karunya-landscape-logo.png'
 
 function Navbar(){
     return(
-        <div className='navbar'>
+        <div className='navbar' align='center'>
             <img className='karunya-landscape-logo' src={logo}/>
         </div>
     )
