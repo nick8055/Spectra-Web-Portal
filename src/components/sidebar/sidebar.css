@@ -10,10 +10,14 @@
     width : 260px;
     background-color: white;
     transition: left 0.6s ease;
+    border-style: none;
+    box-shadow: none;
 }
 
 .main-container.open{
     left: 0;
+    box-shadow: 0px 0px 15px 0px rgb(71 95 123 / 80%);
+    border-bottom: 1px solid rgba(72, 94, 144, 0.16);
 }
 
 .main-container ul{
@@ -69,10 +73,10 @@
     width: 50px;
     height: 50px;
     font-size: 20px;
-    background-color: #fafbfd;
+    background-color: white;
     cursor: pointer;
   }
 
   .main-container .toggleButton.open {
-    left: 260px;
+    left: 205px;
   }

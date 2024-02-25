@@ -16,7 +16,7 @@ function Sidebar(){
     return(
         <div className={`main-container ${isOpen ? 'open' : ''}`}>
                   <button className={`toggleButton ${isOpen ? 'open' : ''}`} onClick={toggleSidebar}>
-                        <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
+                        <FontAwesomeIcon style={{backgroundColor: 'white'}} icon={isOpen ? faTimes : faBars} />
                   </button>
             <img src={logo}/>
 

@@ -12,6 +12,8 @@ app.use(cors());
 mongoose.connect('mongodb+srv://nicholasbranson:Karunya8055$@clusterkitsaiml.rydxbrs.mongodb.net/?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+}).then(function(){
+  console.log("DB Connected");
 });
 
 // Create Question schema
