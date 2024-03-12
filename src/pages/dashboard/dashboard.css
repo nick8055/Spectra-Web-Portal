@@ -1,0 +1,40 @@
+.dashboard-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 120px;
+    width: 100%;
+    gap: 80px;
+}
+
+.dash-title-border-container{
+    width: 90%;
+    margin-left: 5%;
+    /* background-color: white; */
+}
+
+.dash-title{
+    width: 90%;
+    margin-left: 5%;
+    text-align: left;
+    font-weight: lighter;
+    font-family: "IBM Plex Sans", sans-serif;
+    /* background-color: #fff; */
+    margin-bottom: 0;
+    color : #343a40;
+    margin-top: 120px;
+    font-size: 40px;
+}
+
+.dash-title-border {
+    height: 4px;
+    width: 70px;
+    background: #ce2029;
+    display: block;
+}
+
+@media only screen and (max-width: 1000px) {
+    .dashboard-container {
+        display: block; /* Adjust the container width for smaller screens */
+    }
+  }
